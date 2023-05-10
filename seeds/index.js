@@ -5,7 +5,13 @@ const seedAll = async() => {
     await sequelize.sync({force: true});
 
     await seedUsers()
+    await seedBooks()
+    await seedGenres()
+
+    process.exit(0);
 }
+
+seedAll();
 
 // USE FORMAT SIMILAR TO BELOW TO IMPORT BULKCREATE() OF BOOKS/GENRES/USERS/ETC
 
