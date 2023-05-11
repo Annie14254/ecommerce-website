@@ -1,3 +1,53 @@
-{{#each book as |book|}}
+{{!-- {{#each book as |book|}}
 {{> product-details}}
-{{/each}}
+{{/each}} --}}
+
+<div class="container mt-5">
+  <div class="row">
+    {{#each (slice books 0 4) as |book|}}
+      <div class="col-md-3">
+        <div class="card">
+          <img
+            src="https://via.placeholder.com/300"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{book.book_name}}</h5>
+            <p class="card-text">{{book.author}}</p>
+            <a
+              href="http://localhost:3001/{{book.id}}"
+              class="btn btn-secondary"
+            >More Info</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="row more-cards d-none">
+    {{#each (slice books 4 8) as |book|}}
+      <div class="col-md-3">
+        <div class="card">
+          <img
+            src="https://via.placeholder.com/300"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{book.book_name}}</h5>
+            <p class="card-text">{{book.author}}</p>
+            <a
+              href="http://localhost:3001/{{book.id}}"
+              class="btn btn-secondary"
+            >More Info</a>
+          </div>
+        </div>
+      </div>
+
+    {{/each}}
+  </div>
+  <div class="text-center mt-4">
+    <button id="show-more-btn" class="btn btn-secondary">Show More</button>
+  </div>
+</div>

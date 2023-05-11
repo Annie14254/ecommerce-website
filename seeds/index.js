@@ -7,8 +7,8 @@ const seedGenres = require("./genreSeeds");
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedGenres();
   await seedUsers();
+  await seedGenres();
   await seedBooks();
 
   process.exit(0);

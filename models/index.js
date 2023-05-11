@@ -16,10 +16,6 @@ Genre.hasMany(Book, {
   onDelete: "CASCADE",
 });
 
-Genre.belongsToMany(Book, {
-  through: BookGenre,
-});
-
 module.exports = {
   Genre,
   User,
