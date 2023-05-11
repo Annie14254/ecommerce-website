@@ -39,7 +39,11 @@ npm test
 ```
 
 ## Contributors
+
 [Alex Doll](https://github.com/X-is-For-Alex)
+
 [Joshua Martinez](https://github.com/JoshuaMartinez1014)
+
 [Hana Ahmed](https://github.com/Ahha0801)
+
 [Nawal Jama](https://github.com/NawalJama)
