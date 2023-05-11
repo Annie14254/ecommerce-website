@@ -1,15 +1,18 @@
-const sequelize = require('../config/connection');
-const seedUsers = require('./userSeeds')
+const sequelize = require("../config/connection");
 
-const seedAll = async() => {
-    await sequelize.sync({force: true});
+const seedUsers = require("./userSeeds");
+const seedBooks = require("./bookSeeds");
+const seedGenres = require("./genreSeeds");
 
-    await seedUsers()
-    await seedBooks()
-    await seedGenres()
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
 
-    process.exit(0);
-}
+  await seedGenres();
+  await seedUsers();
+  await seedBooks();
+
+  process.exit(0);
+};
 
 seedAll();
 
