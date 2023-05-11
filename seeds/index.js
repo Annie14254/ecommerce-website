@@ -7,8 +7,8 @@ const seedAll = async() => {
     await sequelize.sync({force: true});
 
     await seedUsers()
-    await seedBooks()
     await seedGenres()
+    await seedBooks()
 
     process.exit(0);
 }
