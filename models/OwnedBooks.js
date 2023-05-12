@@ -15,25 +15,28 @@ OwnedBooks.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    owned: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-    },
+    }, 
     book_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: "book",
             key: "id"
         }
     },
     genre_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: "genre",
             key: "id"
         }
-    }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: "user",
+          key: "id"
+      }
+  },
   },
   {
     sequelize,
