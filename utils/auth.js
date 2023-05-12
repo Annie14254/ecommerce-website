@@ -1,10 +1,13 @@
 const withAuth = (req, res, next) => {
-    if(req.session.loggedIn){
-      next()
+  if (req.session.loggedIn) {
+    next();
   } else {
-      res.redirect('/login')
+    res.redirect("/login");
   }
-  };
-  
-  module.exports = withAuth;
-  
+};
+
+function slice(arr, start, end) {
+  return arr.slice(start, end);
+}
+
+module.exports = { withAuth, slice };

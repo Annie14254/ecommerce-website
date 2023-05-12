@@ -1,19 +1,20 @@
-const router = require('express').Router();
-const { User, Book, Genre } = require('../models');
-const sequelize = require("../config/connection")
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { User, Book, Genre } = require("../models");
+/* const sequelize = require("../config/connection");
+const withAuth = require("../utils/auth"); */
 
-router.get('/', async (req, res) => {
-    try {
-      // Get all books with associated genre
-      const bookData = await Book.findAll({
-        include: [
-          {
-            model: Genre,
-            attributes: ['id', 'genre_name']
-          }
-        ],
-      });
+router.get("/", async (req, res) => {
+  try {
+    const bookData = await Book.findAll();
+    const books = bookData.map((book) => book.get({ plain: true }));
+    console.log(books);
+    res.status(200).render("products", { books });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
       // Serialize data 
       const books = bookData.map((book) => book.get({ plain: true }));
@@ -29,24 +30,17 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/book/:id', async (req, res) => {
-    try {
-      const bookData = await Book.findByPk(req.params.id, {
-        include: [
-          {
-            model: Comment,
-            attributes: ['id', 'content', 'date', 'user_id', 'blog_id'],
-            include: {
-                model: User,
-                attributes: ['username']
-            }
-          },
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ],
-      });
+  router.get("/:id", async (req, res) => {
+  try {
+    const bookData = await Book.findByPk(req.params.id);
+    const book = bookData.get({ plain: true });
+    console.log(book);
+    res.status(200).render("book", { book });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
   
       const book = bookData.get({ plain: true });
   
@@ -70,7 +64,7 @@ router.get('/', async (req, res) => {
   
       const user = userData.get({ plain: true });
   
-      res.render('dashboard', {
+      res.render('profile', {
         ...user,
         logged_in: true
       });
@@ -91,3 +85,4 @@ router.get('/', async (req, res) => {
   });
   
   module.exports = router;
+
