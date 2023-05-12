@@ -2,6 +2,7 @@ const User = require('./User')
 const Book = require('./Book');
 const Genre = require('./Genre')
 const BookGenre = require('./BookGenre')
+const OwnedBooks = require('./OwnedBooks')
 
 
 Book.belongsTo(Genre, {
@@ -17,10 +18,22 @@ Genre.hasMany(Book, {
     onDelete: 'CASCADE'
 })
 
+// Products belongToMany Tags (through ProductTag)
+
+Book.belongsToMany(User, {
+    through: OwnedBooks
+  })
+  
+  // Tags belongToMany Products (through ProductTag)
+  
+  User.belongsToMany(Book, {
+    through: OwnedBooks
+  })
 
 module.exports = {
     User,
     Book,
     Genre,
     BookGenre,
+    OwnedBooks,
   };
