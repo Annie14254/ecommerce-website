@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 const seedUsers = require("./userSeeds");
 const seedBooks = require("./bookSeeds");
 const seedGenres = require("./genreSeeds");
+const seedOwnedBooks = require('./ownedBookseeds')
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -10,6 +11,7 @@ const seedAll = async () => {
   await seedUsers();
   await seedGenres();
   await seedBooks();
+  await seedOwnedBooks();
 
   process.exit(0);
 };

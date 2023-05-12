@@ -9,12 +9,16 @@
     </div>
   </div>
 </section>
+{{#if genre}}
+  {{genre}}
+{{/if}}
 
 <div class="container mt-5">
   <div class="row">
     {{#each (slice books 0 4) as |book|}}
       <div class="col-md-3">
         <div class="card">
+          {{! http://lgimages.s3.amazonaws.com/gc-md.gif }}
           <img
             src="https://via.placeholder.com/300"
             class="card-img-top"
@@ -23,10 +27,7 @@
           <div class="card-body">
             <h5 class="card-title">{{book.book_name}}</h5>
             <p class="card-text">{{book.author}}</p>
-            <a
-              href="http://localhost:3001/book/{{book.id}}"
-              class="btn btn-secondary"
-            >More Info</a>
+            <a href="book/{{book.id}}" class="btn btn-secondary">More Info</a>
           </div>
         </div>
       </div>
@@ -45,10 +46,7 @@
           <div class="card-body">
             <h5 class="card-title">{{book.book_name}}</h5>
             <p class="card-text">{{book.author}}</p>
-            <a
-              href="http://localhost:3001/book/{{book.id}}"
-              class="btn btn-secondary"
-            >More Info</a>
+            <a href="book/{{book.id}}" class="btn btn-secondary">More Info</a>
           </div>
         </div>
       </div>
@@ -56,6 +54,6 @@
     {{/each}}
   </div>
   <div class="text-center mt-4">
-    <button id="show-more-btn" class="btn btn-secondary">Show More</button>
+    <button id="show-more-btn" class="btn btn-secondary">Toggle More</button>
   </div>
 </div>

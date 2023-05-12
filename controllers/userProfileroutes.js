@@ -1,33 +1,57 @@
-const router = require('express').Router();
-const { Book, Genre, User } = require('../models');
-const sequelize = require("../config/connection")
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+// const { Book, Genre, User } = require('../models');
+// const sequelize = require("../config/connection")
+// const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
-    try {
-      // Get all books with associated genre, by user id for owned_books
-      const bookData = await Book.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        include: [
-            {
-              model: Genre,
-              attributes: ['id', 'genre_name']
-            }
-          ],
-        });
-  
-      // Serialize data
-      const books = bookData.map((book) => book.get({ plain: true }));
-      console.log(books)
-  
-      // Pass into template for profile
-      res.render('profile', { 
-        books, 
-        logged_in: req.session.logged_in 
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+// Use withAuth middleware to prevent access to route
+router.get("/profile", async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    /* const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Book }],
+    });
+
+    const user = userData.get({ plain: true }); */
+
+    res.render("profile", {
+      /*   ...user,
+      logged_in: true, */
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ msg: err });
+  }
+});
+
+router.get("/login", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  /*   if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  } */
+
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  /*   if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  } */
+
+  res.render("signup");
+});
+
+router.post("/signup", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  /*   if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  } */
+
+  res.render("signup");
+});
+
+module.exports = router;
