@@ -1,13 +1,18 @@
 const router = require("express").Router();
 const { User, Book, Genre } = require("../models");
-/* const sequelize = require("../config/connection");
+
+const sequelize = require("../config/connection");
+/*
 const withAuth = require("../utils/auth"); */
 
+// Starting homepage
 router.get("/", async (req, res) => {
   try {
-    const bookData = await Book.findAll();
+    const bookData = await Book.findAll({
+      order: sequelize.literal("RAND()"),
+    });
     const books = bookData.map((book) => book.get({ plain: true }));
-    console.log(books);
+    /* console.log(books); */
     res.status(200).render("products", { books });
   } catch (err) {
     console.log(err);
@@ -15,12 +20,70 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/book/:id", async (req, res) => {
   try {
     const bookData = await Book.findByPk(req.params.id);
+    console.log(bookData);
     const book = bookData.get({ plain: true });
     console.log(book);
     res.status(200).render("book", { book });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/classic", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 1 },
+    });
+    /*   console.log(genreData); */
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books);
+    res.status(200).render("products", { books });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get("/sciencefiction", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 2 },
+    });
+    /*  console.log(genreData); */
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books);
+    res.status(200).render("products", { books });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get("/history", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 3 },
+    });
+    /*    console.log(genreData); */
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books);
+    res.status(200).render("products", { books });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get("/biographies", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 4 },
+    });
+    /* console.log(genreData); */
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books);
+    res.status(200).render("products", { books });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
