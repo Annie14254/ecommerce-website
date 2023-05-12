@@ -1,6 +1,8 @@
 
 .hero-image {
-  background-image: url("https://placehold.co/1500x300");
+  /* image attained from https://www.pexels.com/photo/photography-of-book-page-1029141/ */
+  background-image: url("../../public/images/hero.jpg");
+  background-position: center top;
   background-size: cover;
   height: 300px;
 }
