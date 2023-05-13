@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  </nav>
+  <header class="hero">
+    <h1 class="app-title"><a href="/dashboard">Profile</a></h1>
+  </header>
+
+  <main class="col-auto">
+    <h2>Owned Books:</h2>
+    {{#each OwnedBooks}}
+        <div class = "card">
+            <h3>{{book.book_name}}</h3>
+            <h4>{{book.author}}</h4>
+        </div>
+    {{/each}}
+  </main>
+
+  
+    <a href="/profile/newBook">➕ Click here to list a new book</a>
+    <a href="/profile/newGenre">➕ Click here to list a new genre</a>
+
+</body>
+
+<script src="/js/logout.js"></script>
+
+</html>
