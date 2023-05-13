@@ -2,7 +2,7 @@
 const genreAddHandler = async function(event) {
     event.preventDefault();
 
-    const genre_name = document.querySelector('#genre-name-input')
+    const genre_name = document.querySelector('#genre-name-input').value
 
     if(genre_name) {
         await fetch('/api/genre', {
