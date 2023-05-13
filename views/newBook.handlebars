@@ -1,0 +1,37 @@
+<div class="row justify-space-between-md">
+  <div class="card">
+    <h2>List a Book For Sale</h2>
+    <form class="form new-post-form" id = "new-book-form">
+        <div class="form-group">
+        <label for="book-title-input">Book Title:</label>
+        <input class="form-input" type="text" id="book-title-input" name = "book-title-input" placeholder = "Book Title"/>
+      </div>
+      <div class="form-group" id = "genre-selector-input">
+        <!--create a loop to create radio buttons for each genre-->
+        {{!-- <label for="genre-selector-input">Book Genre:</label>
+        <input class="form-input" type="radio" id="genre-selector-input" name="genre-selector-input" /> --}}
+      </div>
+      <div class="form-group">
+        <label for="author-input">Book Author:</label>
+        <input class="form-input" type="text" id="author-input" name="author-input" placeholder = "Book Author"/>
+      </div>
+      <div class="form-group">
+        <label for="ISBN-input">Book ISBN-10:</label>
+        <input class="form-input" type="text" id="ISBN-input" name="ISBN-input" placeholder = "Book ISBN-10"/>
+      </div>
+      <div class="form-group">
+        <label for="price-input">Book Price (USD):</label>
+        <input class="form-input" type="number" id="price-input" name="price-input" placeholder = "0.00"/>
+      </div>
+      <div class="form-group">
+        <label for="stock-input">How many do you want to list?</label>
+        <input class="form-input" type="number" id="stock-input" name="stock-input" placeholder = "0" min="0" step="1"/>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Make New Book Listing</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/book.js"></script>
