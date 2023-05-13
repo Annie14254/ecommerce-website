@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     });
     const books = bookData.map((book) => book.get({ plain: true }));
     /* console.log(books); */
-    res.status(200).render("products", { books });
+    res.status(200).render("homepage", { books });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -25,7 +25,7 @@ router.get("/book/:id", async (req, res) => {
     const bookData = await Book.findByPk(req.params.id);
     console.log(bookData);
     const book = bookData.get({ plain: true });
-    console.log(book);
+    /*   console.log(book); */
     res.status(200).render("book", { book });
   } catch (err) {
     console.log(err);
@@ -39,13 +39,13 @@ router.get("/classic", async (req, res) => {
       where: { genre_id: 1 },
       include: { model: Genre },
     });
-    console.log(genreData);
+    /*    console.log(genreData); */
     const books = genreData.map((book) => book.get({ plain: true }));
-    console.log(books[1].genre.genre_name);
-    console.log(books);
+    /*   console.log(books[1].genre.genre_name);
+    console.log(books); */
     res
       .status(200)
-      .render("products", { books, genre: books[0].genre.genre_name });
+      .render("homepage", { books, genre: books[0].genre.genre_name });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -58,13 +58,13 @@ router.get("/sciencefiction", async (req, res) => {
       where: { genre_id: 2 },
       include: { model: Genre },
     });
-    console.log(genreData);
+    /*  console.log(genreData); */
     const books = genreData.map((book) => book.get({ plain: true }));
-    console.log(books[1].genre.genre_name);
-    console.log(books);
+    /*  console.log(books[1].genre.genre_name);
+    console.log(books); */
     res
       .status(200)
-      .render("products", { books, genre: books[0].genre.genre_name });
+      .render("homepage", { books, genre: books[0].genre.genre_name });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -77,13 +77,13 @@ router.get("/history", async (req, res) => {
       where: { genre_id: 3 },
       include: { model: Genre },
     });
-    console.log(genreData);
+    /*   console.log(genreData); */
     const books = genreData.map((book) => book.get({ plain: true }));
-    console.log(books[1].genre.genre_name);
-    console.log(books);
+    /*   console.log(books[1].genre.genre_name);
+    console.log(books); */
     res
       .status(200)
-      .render("products", { books, genre: books[0].genre.genre_name });
+      .render("homepage", { books, genre: books[0].genre.genre_name });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -96,13 +96,13 @@ router.get("/biographies", async (req, res) => {
       where: { genre_id: 4 },
       include: { model: Genre },
     });
-    console.log(genreData);
+    /*     console.log(genreData); */
     const books = genreData.map((book) => book.get({ plain: true }));
-    console.log(books[1].genre.genre_name);
-    console.log(books);
+    /*    console.log(books[1].genre.genre_name);
+    console.log(books); */
     res
       .status(200)
-      .render("products", { books, genre: books[0].genre.genre_name });
+      .render("homepage", { books, genre: books[0].genre.genre_name });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
