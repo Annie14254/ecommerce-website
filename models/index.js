@@ -12,6 +12,10 @@ Book.belongsTo(Genre, {
   foreignKey: "genre_id",
 });
 
+/* Genre.hasMany(Book, {
+  foreignKey: "book_id",
+}); */
+
 Genre.hasMany(Book, {
   foreignKey: "genre_id",
   onDelete: "CASCADE",
