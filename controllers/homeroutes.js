@@ -1,13 +1,18 @@
 const router = require("express").Router();
 const { User, Book, Genre } = require("../models");
-const sequelize = require("../config/connection");
-const {withAuth} = require("../utils/auth"); 
 
+const sequelize = require("../config/connection");
+/*
+const withAuth = require("../utils/auth"); */
+
+// Starting homepage
 router.get("/", async (req, res) => {
   try {
-    const bookData = await Book.findAll();
+    const bookData = await Book.findAll({
+      order: sequelize.literal("RAND()"),
+    });
     const books = bookData.map((book) => book.get({ plain: true }));
-    console.log(books);
+    /* console.log(books); */
     res.status(200).render("products", { books });
   } catch (err) {
     console.log(err);
@@ -15,9 +20,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/book/:id", async (req, res) => {
   try {
     const bookData = await Book.findByPk(req.params.id);
+    console.log(bookData);
     const book = bookData.get({ plain: true });
     console.log(book);
     res.status(200).render("book", { book });
@@ -27,35 +33,80 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get("/classic", async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Book }],
+    const genreData = await Book.findAll({
+      where: { genre_id: 1 },
+      include: { model: Genre },
     });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
+    console.log(genreData);
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books[1].genre.genre_name);
+    console.log(books);
+    res
+      .status(200)
+      .render("products", { books, genre: books[0].genre.genre_name });
   } catch (err) {
-    console.log(err)
-    res.status(500).send({ msg: err });
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
+router.get("/sciencefiction", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 2 },
+      include: { model: Genre },
+    });
+    console.log(genreData);
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books[1].genre.genre_name);
+    console.log(books);
+    res
+      .status(200)
+      .render("products", { books, genre: books[0].genre.genre_name });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
+});
 
-  res.render('login');
+router.get("/history", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 3 },
+      include: { model: Genre },
+    });
+    console.log(genreData);
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books[1].genre.genre_name);
+    console.log(books);
+    res
+      .status(200)
+      .render("products", { books, genre: books[0].genre.genre_name });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/biographies", async (req, res) => {
+  try {
+    const genreData = await Book.findAll({
+      where: { genre_id: 4 },
+      include: { model: Genre },
+    });
+    console.log(genreData);
+    const books = genreData.map((book) => book.get({ plain: true }));
+    console.log(books[1].genre.genre_name);
+    console.log(books);
+    res
+      .status(200)
+      .render("products", { books, genre: books[0].genre.genre_name });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 /* 
