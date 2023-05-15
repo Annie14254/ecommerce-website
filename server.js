@@ -21,6 +21,11 @@ const sess = {
   }),
 };
 
+app.get("/public/js/signup.js", function (req, res) {
+  res.setHeader("Content-Type", "application/javascript");
+  res.sendFile(__dirname + "/public/js/signup.js");
+});
+
 app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
