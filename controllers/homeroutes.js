@@ -2,8 +2,8 @@ const router = require("express").Router();
 const { User, Book, Genre } = require("../models");
 
 const sequelize = require("../config/connection");
-/*
-const withAuth = require("../utils/auth"); */
+
+const { withAuth, slice } = require("../utils/auth");
 
 // Starting homepage
 router.get("/", async (req, res) => {
@@ -112,7 +112,7 @@ router.get("/biographies", async (req, res) => {
   }
 });
 
-router.get("/account", async (req, res) => {
+router.get("/account", withAuth, async (req, res) => {
   try {
     /* console.log(books); */
     res.status(200).render("profile");
