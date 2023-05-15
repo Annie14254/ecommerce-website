@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body)
   try {
     const newBookData = await Book.create({
      ...req.body,
@@ -20,6 +21,7 @@ router.post("/", async (req, res) => {
 
    res.status(200).json(newBookData)
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
