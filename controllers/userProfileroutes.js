@@ -65,7 +65,10 @@ router.get("/profile/newGenre", async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  res.render("login");
+  console.log(req.query.login);
+  res.render("login", {
+    loginFailed: req.query?.login === "failed",
+  });
 });
 
 router.get("/signup", (req, res) => {
