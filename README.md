@@ -5,7 +5,7 @@
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
-- [Technologies](#Technologies Used)
+- [Technologies](#Technologies)
 - [Usage](#Usage)
 - [Testing](#Testing)
 - [Contribution](#Contribution)
@@ -17,12 +17,12 @@ Users Have Following Access for this online store site:-You can also see all of 
 
 
 
-## Create New Account or Register.
+## Create New Account or Register
 Login.
 View Available Books.
 Select Books to Buy.
 Select Books Quantity.
-add/save to favorit Books. 
+Add/Save to Favorite Books. 
 
 
 ## Installation
@@ -32,15 +32,15 @@ To install the dependencies required for the application, run the following line
 npm install
 ```
 
-## Technologies used:-
-Handlbars- routes
+## Technologies
+Handlebars- routes
 Express
 HTML
 CSS
 Javascript
 BootStrap
 Back-End Development:
-MySql12
+MySQL2
 
 ## Usage
 To run locally:
@@ -66,7 +66,7 @@ Books/product page
 
 Cart page 
 
-signup page 
+Signup page 
 
 ## Contributors
 
