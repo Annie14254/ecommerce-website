@@ -1,12 +1,15 @@
 <div class="row justify-space-between-md">
   <div class="card">
     <h2>List a Book For Sale</h2>
-    <form class="form new-post-form" id = "new-book-form">
+    <form class="form new-post-form ms-2 pt-2" id = "new-book-form">
         <div class="form-group">
         <label for="book-title-input">Book Title:</label>
         <input class="form-input" type="text" id="book-title-input" name = "book-title-input" placeholder = "Book Title"/>
       </div>
-      <div class="form-group" id = "genre-selector-input">
+      <div>
+        Genre:
+      </div>
+      <div class="form-group col-2 ms-2" id = "genre-selector-input">
         <label for="classic">Classic</label>
         <input class="form-input genre-selector-input" type="radio" name="genre" id = "classic" value="1" /><br/>
         <label for="sciencefic">Science Fiction</label>
@@ -14,7 +17,7 @@
         <label for="history">History</label>
         <input class="form-input genre-selector-input" type="radio" name="genre" id = "history" value="3" /><br/>
         <label for="biographies">Biographies</label>
-        <input class="form-input genre-selector-input" type="radio" name="genre" id = "biographies" value = "4" /><br/>
+        <input class="form-input genre-selector-input" type="radio" name="genre" id = "biographies" value = "4" />
       </div>
       <div class="form-group">
         <label for="author-input">Book Author:</label>
