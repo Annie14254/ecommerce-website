@@ -66,28 +66,25 @@
               <a class="nav-link" href="/user/signup">Sign Up</a>
             </li> }}
 
-            {{!--  {{#if !req.session.logged_in}} --}}
-
-            <li class="nav-item active">
-              <a class="nav-link" href="/user/login">Log In</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/account">Account</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/" id="logout">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/cart">
-                Cart
-                <i class="bi bi-cart"></i>
-              </a>
-            </li>
-            {{!--  {{else}} --}}
-            <li class="nav-item active">
-              <a class="nav-link" href="/user/login">{{!-- {{user}} --}}</a>
-            </li>
-            {{!-- {{/if}} --}}
+            {{#if logged_in}}
+              <li class="nav-item active">
+                <a class="nav-link" href="/" id="logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/cart">
+                  Cart
+                  <i class="bi bi-cart"></i>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/account">Account</a>
+              </li>
+            {{else}}
+              <li class="nav-item active">
+                <a class="nav-link" href="/user/login">Log In</a>
+                </a>
+              </li>
+            {{/if}}
           </ul>
         </div>
       </div>
