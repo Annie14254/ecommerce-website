@@ -1,14 +1,19 @@
+* {
+}
 
 .hero-image {
-  background-image: url("https://placehold.co/1500x300");
+  /* image attained from https://www.pexels.com/photo/photography-of-book-page-1029141/ */
+  background-image: url("../../public/images/hero.png");
   background-size: cover;
   height: 300px;
+  filter: brightness(70%);
 }
 
 .hero-text {
   text-align: center;
   padding-top: 100px;
-  color: white;
+  color: #c3b0b0;
+  filter: brightness(100%);
 }
 
 .card {

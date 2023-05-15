@@ -3,22 +3,23 @@
 const bookAddHandler = async function(event) {
     event.preventDefault();
 
-    const bookTitle = document.querySelector('#book-title-input')
-    const bookGenre = document.querySelector('#genre-selector-input')
-    const bookDescription = document.querySelector('#description-input')
-    const bookPrice = document.querySelector('#price-input')
+    const book_name = document.querySelector('#book-title-input').value
+    const bookGenre = document.querySelector('#genre-selector-input').value
+    const author = document.querySelector('#author-input').value
+    const price = document.querySelector('#price-input').value
+    const isbn = document.querySelector('#ISBN-input').value
     // label for stock would be for example "how many of this book would you like to list?"
-    const bookStock = document.querySelector('#stock-input')
+    const stock = document.querySelector('#stock-input')
 
-    if(bookTitle && bookGenre && bookPrice && bookStock) {
+    if(book_name && bookGenre && price && author && isbn && stock) {
         await fetch('/api/book', {
             method: 'POST',
             body: JSON.stringify({
-                bookTitle,
-                bookGenre,
-                bookDescription,
-                bookPrice,
-                bookStock
+                author,
+                book_name,
+                price,
+                stock,
+                isbn
             }),
             headers: {
                 'Content-Type': 'application/json'
