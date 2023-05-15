@@ -33,14 +33,14 @@ npm install
 ```
 
 ## Technologies
-Handlebars- routes
-Express
-HTML
-CSS
-Javascript
-BootStrap
-Back-End Development:
-MySQL2
+- Handlebars- routes
+- Express
+- HTML
+- CSS
+- Javascript
+- BootStrap
+- Back-End Development:
+- MySQL2
 
 ## Usage
 To run locally:
