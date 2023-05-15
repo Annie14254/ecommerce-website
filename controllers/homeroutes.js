@@ -13,7 +13,9 @@ router.get("/", async (req, res) => {
     });
     const books = bookData.map((book) => book.get({ plain: true }));
     /* console.log(books); */
-    res.status(200).render("homepage", { books });
+    res
+      .status(200)
+      .render("homepage", { books /* logged_in: req.session.logged_in  */ });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -43,9 +45,10 @@ router.get("/classic", async (req, res) => {
     const books = genreData.map((book) => book.get({ plain: true }));
     /*   console.log(books[1].genre.genre_name);
     console.log(books); */
-    res
-      .status(200)
-      .render("homepage", { books, genre: books[0].genre.genre_name });
+    res.status(200).render("homepage", {
+      books,
+      genre: books[0].genre.genre_name,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -109,6 +112,35 @@ router.get("/biographies", async (req, res) => {
   }
 });
 
+router.get("/account", async (req, res) => {
+  try {
+    /* console.log(books); */
+    res.status(200).render("profile");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/account/newbook", async (req, res) => {
+  try {
+    /* console.log(books); */
+    res.status(200).render("newBook");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/account/newgenre", async (req, res) => {
+  try {
+    /* console.log(books); */
+    res.status(200).render("newGenre");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 /* 
 router.get("/", async (req, res) => {
   try {

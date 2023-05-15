@@ -24,63 +24,51 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-router.get('/profile/newBook', async (req, res) => {
-    try{
+router.get("/profile/newBook", async (req, res) => {
+  try {
     //     // Find the logged in user based on the session ID
     //   const userData = await User.findByPk(req.session.user_id, {
     //     attributes: { exclude: ['password'] },
     //     include: [{ model: Book }],
     //   });
-  
+
     //   const user = userData.get({ plain: true });
-  
-      res.render('newBook', {
-        // ...user,
-        // logged_in: true
-      });
 
-    } catch (err){
-        console.log(err);
-        res.status(500).send({message: err})
-    }
-})
+    res.render("newBook", {
+      // ...user,
+      // logged_in: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: err });
+  }
+});
 
-router.get('/profile/newGenre', async (req, res) => {
-    try{
+router.get("/profile/newGenre", async (req, res) => {
+  try {
     //     // Find the logged in user based on the session ID
     //   const userData = await User.findByPk(req.session.user_id, {
     //     attributes: { exclude: ['password'] },
     //     include: [{ model: Book }],
     //   });
-  
-    //   const user = userData.get({ plain: true });
-  
-      res.render('newGenre', {
-        // ...user,
-        // logged_in: true
-      });
 
-    } catch (err){
-        console.log(err);
-        res.status(500).send({message: err})
-    }
-})
+    //   const user = userData.get({ plain: true });
+
+    res.render("newGenre", {
+      // ...user,
+      // logged_in: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: err });
+  }
+});
 
 router.get("/login", (req, res) => {
   res.render("login");
 });
 
 router.get("/signup", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  /*   if (req.session.logged_in) {
-    res.redirect("/profile");
-    return;
-  } */
-
-  res.render("signup");
-});
-
-router.post("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   /*   if (req.session.logged_in) {
     res.redirect("/profile");
