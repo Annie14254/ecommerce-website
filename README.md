@@ -5,13 +5,25 @@
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
+- [Technologies](#Technologies)
 - [Usage](#Usage)
 - [Testing](#Testing)
 - [Contribution](#Contribution)
 - [Contact](#Contact)
 
 ## Description
-This application has the functionality of a mock e-commerce website focused around books. The tech stack involved uses JavaScript and Handlebars, as well as packages such as Express, mysql2, and sequelize to handle databases and routes.
+This application has the functionality of a mock e-commerce website focused around books.
+Users Have Following Access for this online store site:-You can also see all of your purchased books history. 
+
+
+
+## Create New Account or Register
+Login.
+View Available Books.
+Select Books to Buy.
+Select Books Quantity.
+Add/Save to Favorite Books. 
+
 
 ## Installation
 To install the dependencies required for the application, run the following line in the terminal.
@@ -19,6 +31,16 @@ To install the dependencies required for the application, run the following line
 ```
 npm install
 ```
+
+## Technologies
+- Handlebars- routes
+- Express
+- HTML
+- CSS
+- Javascript
+- BootStrap
+- Back-End Development:
+- MySQL2
 
 ## Usage
 To run locally:
@@ -37,6 +59,14 @@ To test the application, run the following line in the terminal.
 ```
 npm test
 ```
+## Screen Shots
+Sign in/ Home page
+
+Books/product page
+
+Cart page 
+
+Signup page 
 
 ## Contributors
 
