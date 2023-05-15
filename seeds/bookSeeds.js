@@ -6,6 +6,7 @@ const bookData = [
         author: "Jerome David Salinger",
         price: 30.00,
         stock: 12,
+        isbn: "0316769177",
         genre_id: 1,
     },
     {
@@ -13,6 +14,7 @@ const bookData = [
         author: "Ernest Hemingway",
         price: 25.50,
         stock: 38,
+        isbn: "1501121960",
         genre_id: 1,
     },
     {
@@ -20,6 +22,7 @@ const bookData = [
         author: "Jane Austen",
         price: 12.50,
         stock: 15,
+        isbn: "0141439513",
         genre_id: 1,
     },
     {
@@ -27,6 +30,7 @@ const bookData = [
         author: "Leo Tolstoy",
         price: 17.00,
         stock: 23,
+        isbn: "1400079985",
         genre_id: 1,
     },
     {
@@ -34,6 +38,7 @@ const bookData = [
         author: "Harper Lee",
         price: 19.50,
         stock: 43,
+        isbn: "0060935464",
         genre_id: 1,
     },
     {
@@ -41,6 +46,7 @@ const bookData = [
         author: "Herman Melville",
         price: 17.99,
         stock: 9,
+        isbn:,
         genre_id: 1,
     },
     {
@@ -48,6 +54,7 @@ const bookData = [
         author: "Mark Twain",
         price: 10.49,
         stock: 6,
+        isbn:,
         genre_id: 1,
     },
     {
@@ -55,6 +62,7 @@ const bookData = [
         author: "Aldous Huxley",
         price: 13.99,
         stock: 50,
+        isbn:,
         genre_id: 1,
     },
     {
@@ -62,6 +70,7 @@ const bookData = [
         author: "Charles Dickens",
         price: 14.99,
         stock: 13,
+        isbn:,
         genre_id: 1,
     },
     {
@@ -69,6 +78,7 @@ const bookData = [
         author: "Mary Shelley",
         price: 18.95,
         stock: 9,
+        isbn:,
         genre_id: 1,
     },
     {
@@ -76,6 +86,7 @@ const bookData = [
         author: "Frank Herbert",
         price: 14.99,
         stock: 12,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -83,6 +94,7 @@ const bookData = [
         author: "Douglas Adams",
         price: 12.99,
         stock: 14,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -90,6 +102,7 @@ const bookData = [
         author: "Andy Weir",
         price: 15.00,
         stock: 9,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -97,6 +110,7 @@ const bookData = [
         author: "William Gibson",
         price: 9.99,
         stock: 10,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -104,6 +118,7 @@ const bookData = [
         author: "Michael Crichton",
         price: 15.50,
         stock: 7,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -111,6 +126,7 @@ const bookData = [
         author: "Kurt Vonnegut Jr",
         price: 18.75,
         stock: 4,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -118,6 +134,7 @@ const bookData = [
         author: "Phillip K Dick",
         price: 15.00,
         stock: 9,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -125,6 +142,7 @@ const bookData = [
         author: "H.G. Wells",
         price: 9.50,
         stock: 5,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -132,6 +150,7 @@ const bookData = [
         author: "H.G. Wells",
         price: 10.75,
         stock: 8,
+        isbn:,
         genre_id: 2,
     },
     {
@@ -139,14 +158,16 @@ const bookData = [
         author: "Orson Scott Card",
         price: 9.75,
         stock: 10,
+        isbn:,
         genre_id: 2,
     },
     {
         book_name: "The Guns of August",
         author: "Barbara W. Tuchman",
-        "price": 34.99,
-        "stock": 10,
-        "genre_id": 3
+        price: 34.99,
+        stock: 10,
+        isbn:,
+        genre_id: 3
     },
     {
         book_name: "The Crusades Through Arab Eyes",
@@ -165,8 +186,9 @@ const bookData = [
     {
         book_name: "The Rise and Fall of the Third Reich",
         author: "William L. Shirer",
-        "price": 21.99,
+        price: 21.99,
         stock: 12,
+        isbn:,
         genre_id: 3
     },
     {
@@ -174,6 +196,7 @@ const bookData = [
         author: "Peter Frankopan",
         price: 27.99,
         stock: 7,
+        isbn:,
         genre_id: 3
     },
     {
@@ -181,6 +204,7 @@ const bookData = [
         author: "Charles C. Mann",
         price: 18.99,
         stock: 6,
+        isbn:,
         genre_id: 3
     },
     {
@@ -188,6 +212,7 @@ const bookData = [
         author: "Jared Diamond",
         price: 26.99,
         stock: 11,
+        isbn:,
         genre_id: 3
     },
     {
@@ -195,6 +220,7 @@ const bookData = [
         author: "David McCullough",
         price: 23.99,
         stock: 13,
+        isbn:,
         genre_id: 3
     },
     {
@@ -202,6 +228,7 @@ const bookData = [
         author: "Eric Hobsbawm",
         price: 29.99,
         stock: 9,
+        isbn:,
         genre_id: 3
     },
     {
@@ -209,6 +236,7 @@ const bookData = [
         author: "Walter Isaacson",
         price: 34.99,
         stock: 10,
+        isbn:,
         genre_id: 4
     },
     {
@@ -216,6 +244,7 @@ const bookData = [
         author: "Laura Hillenbrand",
         price: 29.99,
         stock: 15,
+        isbn:,
         genre_id: 4
     },
     {
@@ -223,6 +252,7 @@ const bookData = [
         author: "Nelson Mandela",
         price: 24.99,
         stock: 8,
+        isbn:,
         genre_id: 4
     },
     {
@@ -230,6 +260,7 @@ const bookData = [
         author: "Rebecca Skloot",
         price: 21.99,
         stock: 12,
+        isbn:,
         genre_id: 4
     },
     {
@@ -237,6 +268,7 @@ const bookData = [
         author: "Anne Frank",
         price: 27.99,
         stock: 7,
+        isbn:,
         genre_id: 4
     },
     {
@@ -244,6 +276,7 @@ const bookData = [
         author: "Malcolm X, Alex Haley",
         price: 18.99,
         stock: 6,
+        isbn:,
         genre_id: 4
     },
     {
@@ -251,6 +284,7 @@ const bookData = [
         author: "Sylvia Nasar",
         price: 26.99,
         stock: 11,
+        isbn:,
         genre_id: 4
     },
     {
@@ -258,6 +292,7 @@ const bookData = [
         author: "Michelle Obama",
         price: 23.99,
         stock: 13,
+        isbn:,
         genre_id: 4
     },
     {
@@ -265,6 +300,7 @@ const bookData = [
         author: "Tiffany Haddish",
         price: 29.99,
         stock: 9,
+        isbn:,
         genre_id: 4
     },
     {
@@ -272,6 +308,7 @@ const bookData = [
         author: "Trevor Noah",
         price: 31.99,
         stock: 10,
+        isbn:,
         genre_id: 4
     }
 ];

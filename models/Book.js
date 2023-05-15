@@ -40,11 +40,8 @@ Book.init(
         }
     },
     isbn: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isNumeric: true,
-      }
   },
     genre_id: {
         type: DataTypes.INTEGER,
