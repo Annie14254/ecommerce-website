@@ -14,30 +14,26 @@
  --}}
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-6">
-      <img
-        src="https://via.placeholder.com/500x500"
+    <div class="col-md-6 image-api" id={{book.isbn}}>
+       <img
+        src='https://covers.openlibrary.org/b/isbn/{{book.isbn}}-L.jpg'
         class="img-fluid"
         alt="Product Image"
-      />
+      /> 
     </div>
     <div class="col-md-6">
       <h2>{{book.book_name}}</h2>
       <h4>{{book.author}}</h4>
       <h4>ISBN-10: {{book.isbn}}</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus,
-        sapien eu ullamcorper pretium, nibh dui lobortis risus, sit amet sodales
-        odio dolor vel augue. Duis eu tincidunt purus. Nulla sit amet tellus sed
-        ipsum vestibulum interdum. Maecenas bibendum nisi sit amet velit
-        fringilla, vel consequat est molestie. Donec lobortis elit vel elit
-        consectetur, eget hendrerit eros volutpat. Phasellus lobortis nunc et
-        risus placerat, sed bibendum magna facilisis. Vivamus nec quam vel velit
-        feugiat auctor vel quis massa.
-      </p>
+      <div class="book-description" id={{book.book_name}}>
+        <div class="book-description2" id={{book.isbn}}>
+        </div>
+      </div>
       <h5 class="text-muted">${{book.price}}</h5>
       <h5 class="text-muted">Stock: {{book.stock}}</h5>
       <button type="button" class="btn btn-secondary">Add to Cart</button>
     </div>
   </div>
 </div>
+
+<script src="/js/singleBookImage.js"></script>
