@@ -1,3 +1,5 @@
+const { withAuth, slice } = require("../utils/auth");
+
 const router = require("express").Router();
 // const { Book, Genre, User } = require('../models');
 // const sequelize = require("../config/connection")
@@ -81,7 +83,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/cart", (req, res) => {
+router.get("/cart", withAuth, (req, res) => {
   res.render("cart");
 });
 
