@@ -281,14 +281,14 @@ const bookData = [
         isbn: "0345350685",
         genre_id: 4
     },
-    {
-        book_name: "A Beautiful Mind",
-        author: "Sylvia Nasar",
-        price: 26.99,
-        stock: 11,
-        isbn: "1451628420",
-        genre_id: 4
-    },
+    // {
+    //     book_name: "A Beautiful Mind",
+    //     author: "Sylvia Nasar",
+    //     price: 26.99,
+    //     stock: 11,
+    //     isbn: "0571212921",
+    //     genre_id: 4
+    // },
     {
         book_name: "Becoming",
         author: "Michelle Obama",
