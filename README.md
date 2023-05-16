@@ -22,7 +22,7 @@ Login.
 View Available Books.
 Select Books to Buy.
 Select Books Quantity.
-Add/Save to Favorite Books. 
+
 
 
 ## Installation
