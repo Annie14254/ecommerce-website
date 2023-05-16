@@ -62,15 +62,15 @@ npm test
 ## Screen Shots
 Homepage
 
-<img src = "./public/images/homepage.png alt = "An image of The Book Nook home page"/>
+<img src = "./public/images/homepage.png" alt = "An image of The Book Nook home page"/>
                                                                                   
 Cart page 
 
 Signup and Login Page 
 
-<img src= "./public/images/login.png alt = "An image of The Book Nook login page"/>    
+<img src= "./public/images/login.png" alt = "An image of The Book Nook login page"/>    
 
-<img src= "./public/images/signup.png alt = "An image of The Book Nook sign up page"/>  
+<img src= "./public/images/signup.png" alt = "An image of The Book Nook sign up page"/>  
 
 ## Contributors
 
