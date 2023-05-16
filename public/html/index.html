@@ -73,15 +73,27 @@
       <div class="row">
         <div class="card-group">
           <div class="card mx-1">
+
             <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">This is a book title</h5>
               <p class="card-text">John Doe</p>
             </div>
-            <div class="card-footer d-grid">
-              <a href="./product.html" class="btn btn-secondary btn-block">More Info</a>
+            <div class="card-footer d-grid gap-2">
+              <a href="book/{{book.id}}" class="btn btn-secondary">
+              More Info
+              <i class="bi bi-info-circle mx-1"></i>
+              </a>
+              <a href="book/{{book.id}}" class="btn btn-secondary">
+              Add to Cart
+              <i class="bi bi-cart"></i>
+              </a>
             </div>
+
           </div>
+
+
+
           <div class="card mx-1">
             <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
             <div class="card-body">
