@@ -81,4 +81,8 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/cart", (req, res) => {
+  res.render("cart");
+});
+
 module.exports = router;
