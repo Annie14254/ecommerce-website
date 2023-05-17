@@ -51,7 +51,7 @@ To run locally:
  - Run "node seeds/index.js" in the terminal to seed the database.
  - Run "node server.js" to start the server and access the deployed site at http://localhost:(HOST) (default 3001).
 
-To access the deployed site, visit the link hosted by Heroku: (link goes here).
+To access the deployed site, visit the link hosted by Heroku: https://the-book-nook-grp-6.herokuapp.com/.
 
 ## Testing
 To test the application, run the following line in the terminal.
