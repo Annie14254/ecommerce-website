@@ -66,6 +66,8 @@ Homepage
                                                                                   
 Cart page 
 
+<img width="1522" alt="Cart" src="https://github.com/Annie14254/ecommerce-website/assets/128229173/1d117947-5bd6-4219-a774-7a7d98da93df">
+
 Signup and Login Page 
 
 <img src= "./public/images/login.png" alt = "An image of The Book Nook login page"/>    
