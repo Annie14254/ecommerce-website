@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 class Book extends Model {
   checkPassword(loginPw) {
@@ -10,50 +10,50 @@ class Book extends Model {
 
 Book.init(
   {
-    id: {
+    /*     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
+    }, */
     author: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     book_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     price: {
-        type: DataTypes.DECIMAL,
-        allowNull: false,
-        validate: {
-            isDecimal: true
-        }
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
     },
     stock: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        default: 10,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      default: 10,
     },
     isbn: {
       type: DataTypes.STRING,
       allowNull: false,
-  },
+    },
     genre_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: "genre",
-            key: "id"
-        }
-    }
+      type: DataTypes.INTEGER,
+      references: {
+        model: "genre",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'book',
+    modelName: "book",
   }
 );
 

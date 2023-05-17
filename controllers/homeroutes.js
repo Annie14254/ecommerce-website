@@ -30,7 +30,7 @@ router.get("/book/:id", withAuth, async (req, res) => {
     console.log(bookData);
     const book = bookData.get({ plain: true });
     /*   console.log(book); */
-    res.status(200).render("book", { book });
+    res.status(200).render("book", { book, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -123,8 +123,14 @@ router.get("/biographies", async (req, res) => {
 
 router.get("/account", withAuth, async (req, res) => {
   try {
+    const user = await User.findByPk(req.session.user_id);
     /* console.log(books); */
-    res.status(200).render("profile", { logged_in: req.session.logged_in });
+    console.log(user);
+    const userData = user.get({ plain: true });
+    console.log(userData);
+    res
+      .status(200)
+      .render("profile", { logged_in: req.session.logged_in, userData });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

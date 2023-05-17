@@ -1,9 +1,11 @@
 const sequelize = require("../config/connection");
-
+const seedCart = require("./cartseeds");
 const seedUsers = require("./userSeeds");
 const seedBooks = require("./bookSeeds");
 const seedGenres = require("./genreSeeds");
-const seedOwnedBooks = require('./ownedBookseeds')
+/* const seedOwnedBooks = require("./ownedBookseeds"); */
+
+const { Cart } = require("../models");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -11,7 +13,18 @@ const seedAll = async () => {
   await seedUsers();
   await seedGenres();
   await seedBooks();
-  await seedOwnedBooks();
+  //await seedCart();
+  //await seedOwnedBooks();
+
+  await Cart.create(
+    {
+      user_id: 2,
+      book_id: 20,
+    },
+    {
+      fields: ["user_id", "book_id"],
+    }
+  );
 
   process.exit(0);
 };
