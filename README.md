@@ -13,7 +13,7 @@
 
 ## Description
 This application has the functionality of a mock e-commerce website focused around books.
-Users Have Following Access for this online store site:-You can also see all of your purchased books history. 
+Users Have Following Access for this online store site:-Buyer can see whats in thier cart choose to purschase books or clear list. 
 
 
 
@@ -40,7 +40,8 @@ npm install
 - Javascript
 - BootStrap
 - Back-End Development:
-- MySQL2
+- MySQL12
+- Google books API
 
 ## Usage
 To run locally:
