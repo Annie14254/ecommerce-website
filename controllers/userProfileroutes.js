@@ -1,3 +1,5 @@
+const { withAuth, slice } = require("../utils/auth");
+const { User, Cart, Book } = require("./../models");
 const router = require("express").Router();
 // const { Book, Genre, User } = require('../models');
 // const sequelize = require("../config/connection")
@@ -79,6 +81,39 @@ router.get("/signup", (req, res) => {
   } */
 
   res.render("signup");
+});
+
+router.get("/cart", withAuth, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id, {
+    include: [{ model: Book, through: Cart, as: "carts_with_books" }],
+  });
+  console.log({ userlololol: user });
+  /* const userPosts = await User.getBlogPosts(req.session.user_id); */
+  /*   const userBooks = await Cart.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+  }); */
+  const userData = user.get({ plain: true });
+  /* const userData = user.map((userpost) => userpost.get({ plain: true }));  */
+  console.log({ userDataqaqaqaqa: userData.carts_with_books });
+  /* console.log(cartBooks); */
+  res.render("cart", { bookdata: userData.carts_with_books });
+});
+
+router.post("/cart/insert", async (req, res) => {
+  let bookId = req.body.bookId;
+
+  const cartItem = await Cart.create(
+    {
+      book_id: parseInt(bookId),
+      user_id: req.session.user_id,
+    },
+    {
+      fields: ["book_id", "user_id"],
+    }
+  );
+  console.log(cartItem);
 });
 
 module.exports = router;
