@@ -23,6 +23,7 @@
     "handlebars": "^4.7.7",
     "inquirer": "^9.2.2",
     "mysql2": "^3.3.0",
+    "nodemon": "^2.0.22",
     "sequelize": "^6.31.1",
     "server.js": "^1.0.0"
   }
