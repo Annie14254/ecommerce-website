@@ -6,24 +6,28 @@ class Cart extends Model {}
 
 Cart.init(
   {
-    id: {
+    /* id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
+    }, */
     book_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: "book",
         key: "id",
+        unique: false,
       },
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: "user",
         key: "id",
+        unique: false,
       },
     },
   },

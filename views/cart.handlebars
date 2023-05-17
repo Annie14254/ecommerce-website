@@ -10,14 +10,14 @@
       </tr>
     </thead>
     <tbody>
+       {{#each bookdata}}
       <tr>
-         {{#each books as |book|}}
-        <td>{{book.book_name}}</td>
-        <td>{{book.price}}</td>
-        <td>1</td>
-
+        <td><a href=/book/{{id}}>{{book_name}}</a></td>
+        <td>{{price}}</td>
+        <td>{{stock}}</td>
       </tr>
+          {{/each}} 
 
     </tbody>
   </table>
- 
+ <button type="button" class="btn btn-secondary" disabled>Checkout</button>

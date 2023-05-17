@@ -29,17 +29,17 @@
     <div class="col-md-6">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <h2 class="mb-3">Profile</h2>
+          <h1 class="mb-3">Profile</h1>
           <form id="login-form" class="d-grid gap-2">
             <div class="form-group">
               <!-- <label for="emailInput">Email address</label> -->
-              <h4>Username:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspJosh</h4>
+              <h4><strong>Username:</strong> {{userData.name}}</h4>
             </div>
             <div class="form-group">
               <!-- <label for="passwordInput">Password</label> -->
-              <h4>Email:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Josh@gmail.com</h4>
+              <h4><strong>Email: </strong>{{userData.email}}</h4>
             </div>
-            
+            <a href="/user/profile/newBook"><button class="btn btn-primary">Create new book</button></a>
           </form>
             <svg class="bi" aria-hidden="true"><use
                 xlink:href="#arrow-right"
